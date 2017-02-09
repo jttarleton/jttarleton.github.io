@@ -1,2 +1,2 @@
 # jttarleton.github.io
-MIT DUSP Big Data
+An exploration of housing policy under the Trump administration for MIT DUSP Big Data course.

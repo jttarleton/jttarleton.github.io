@@ -34,25 +34,25 @@ var svg = d3.select("#map").append("svg")
 
 // set color
 var color = d3.scaleThreshold()
-    .domain([-0.5, -0.25, -0.1, 0.1, 0.25, .5])
-    .range(["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#756bb1", "#54278f"]);
+    .domain([-0.5, -0.25, -0.1, 0.0, 0.1, 0.25, .5])
+    .range(["#2171b5", "#6baed6", "#bdd7e7", "#eff3ff", "#fee5d9", "#fcae91", "#fb6a4a", "#cb181d"]);
 
 // queue up the datasets, run 'ready' when loaded
 d3.queue()
     .defer(d3.json, "us.json")
-    .defer(d3.tsv, "election_2016_county_results.tsv")
+    .defer(d3.tsv, "election_results.tsv")
     .await(ready);
 
 // create the graphic with this function
-function ready(error, us, unemployment) {
+function ready(error, us, election_results) {
   if (error) throw error;
 
-  var rateById = {}; // Create empty object for holding dataset
-  unemployment.forEach(function(d) {
-    rateById[d.id] = +d.rate; // Create property for each ID, give it value from rate
-    // important: cast rate to numeric value (+)
+  var victorymarginById = {}; // Create empty object for holding dataset
+  election_results.forEach(function(d) {
+    victorymarginById[d.id] = +d.victory_margin; // Create property for each ID, give it value from victory_margin
+    // important: cast victory_margin to numeric value (+)
   });
-  console.log(rateById);
+  console.log(victorymarginById);
   
   // create and style counties
   svg.append("g")
@@ -61,7 +61,7 @@ function ready(error, us, unemployment) {
       .data(topojson.feature(us, us.objects.counties).features)
     .enter().append("path")
       .attr("d", path)
-      .style("fill", function(d) { return color(rateById[d.id]); });
+      .style("fill", function(d) { return color(victorymarginById[d.id]); });
 
   // create state outlines
   svg.append("path")

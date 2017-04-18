@@ -122,9 +122,9 @@
 		    .attr( "d", geoPath )
 		    .attr( "class", "winner");
 
-		d3.queue()
-    		.defer(d3.json, "election_results_2000_2016.json")
-    		.await(ready);
+		//d3.queue()
+    	//	.defer(d3.json, "election_results_2000_2016.json")
+    	//	.await(ready);
 
 		// when the input range changes update the value 
 		d3.select("#timeslide").on("input", function() {

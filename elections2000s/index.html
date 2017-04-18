@@ -6,7 +6,7 @@
 	<script src="election_results_2000_2016.json"></script>
 	<style>
 		body {
-		    position: relative;
+		    position: absolute;
 		    font-family: "Proxima Nova", "Montserrat", sans-serif;
 		}
 		h1, h2, h3 {
@@ -121,6 +121,10 @@
 		    .attr( "stroke", "#333")
 		    .attr( "d", geoPath )
 		    .attr( "class", "winner");
+
+		d3.queue()
+    		.defer(d3.json, "election_results_2000_2016.json")
+    		.await(ready);
 
 		// when the input range changes update the value 
 		d3.select("#timeslide").on("input", function() {

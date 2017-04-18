@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Presidential Election Results | 2000 - 2016</title>
+	<script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+	<script src="election_results_2000_2016.json"></script>
+	<style>
+		body {
+		    position: absolute;
+		    font-family: "Proxima Nova", "Montserrat", sans-serif;
+		}
+		h1, h2, h3 {
+		    text-align: center;
+		    left: 10px;
+		    font-size: 1.3em;
+		    font-weight: 100;
+		}
+		h2 {
+		    top: 30px;
+		    font-size: 1em;
+		}
+
+		h3 {
+			position:relative;
+			left:-65px;
+			top: 30px;
+			font-size:.05em;
+		}
+
+		#sliderContainer {
+		    text-align: center;
+		    position: relative;
+		    left: -65px;
+		    top: 600px;
+		}
+
+		.my-legend .legend-scale ul {
+	    position: relative;
+	    left: 205px;
+	    margin-bottom: 4px;
+	    padding: 0;
+	    float: left;
+	    list-style: none;
+	    }
+
+	  .my-legend .legend-scale ul li {
+	    position: relative;
+	    display: block;
+	     left: 205px;
+	   	float: left;
+	    width: 70px;
+	    margin-bottom: 6px;
+	    text-align: center;
+	    font-size: 80%;
+	    list-style: none;
+	    }
+
+	  .my-legend ul.legend-labels li span {
+	    position: relative;
+	    display: block;
+	    float: left;
+	    height: 15px;
+	    width: 70px;
+	    }
+	</style>
+</head>
+<body>
+	<h1>Presidential Election Results</h1>
+	<h2>By State | 2000 - 2016</h2>
+
+	<div class='my-legend'>
+	<div class='legend-scale'>
+	  <ul class='legend-labels'>
+	    <li><span style='background:#0074D9;'></span>Democrat</li>
+	    <li><span style='background:#FF4136;'></span>Republican</li>
+	  </ul>
+	</div>
+
+
+	<div id="sliderContainer">
+	    <input id="timeslide" type="range" min="0" max="4" value="0" step="1"/><br>
+	    <span id="range">2000</span>
+	</div>
+
+	<h3> Source: <a target="_blank" href="https://www.archives.gov/federal-register/electoral-college/historical.html"> U.S. National Archives and Records Administration.</a>
+	</h3>
+
+	<script>
+		// Our D3 code will go here.
+		// Width and Height of the whole visualization
+		var width = 960;
+		var height = 500;
+
+		var svg = d3.select( "body" )
+			.append( "svg" )
+			.attr( "width", width )
+			.attr( "height", height );
+
+		var inputValue = null;
+		var year = ["2000","2004","2008","2012","2016"];
+
+		// Append empty placeholder g element to the SVG
+		// g will contain geometry elements
+
+		var projection = d3.geoAlbersUsa()
+    		.scale( 1000 )
+    		.translate( [width/2,height/2] );
+    	var g = svg.append( "g" );
+
+		// d3 geopath for projection
+		var geoPath = d3.geoPath()
+		    .projection( projection );
+
+		var elections = svg.append( "g" );
+
+		elections.selectAll( "path" )
+		    .data( election_results_json.features )
+		    .enter()
+		    .append( "path" )
+		    .attr( "fill", initialDate )
+		    .attr( "stroke", "#333")
+		    .attr( "d", geoPath )
+		    .attr( "class", "winner");
+
+		// when the input range changes update the value 
+		d3.select("#timeslide").on("input", function() {
+		    update(+this.value);
+		});
+
+		// update the fill of each SVG of class "winner" with value
+		function update(value) {
+		    document.getElementById("range").innerHTML=year[value];
+		    inputValue = year[value];
+		    d3.selectAll(".winner")
+		        .attr("fill", dateMatch);
+		}
+
+		function dateMatch(data, value) {
+            console.log(data);
+            console.log(inputValue);
+            if (inputValue == 2000) {
+               if (data.properties.elect2000 == "R") {
+               	  this.parentElement.appendChild(this);
+                  return "#FF4136";
+                } else if (data.properties.elect2000 == "D") {
+                  return "#0074D9";    
+                }}
+            if (inputValue == 2004) {
+               if (data.properties.elect2004 == "R") {
+               	  this.parentElement.appendChild(this);
+                  return "#FF4136";
+                } else if (data.properties.elect2004 == "D") {
+                  return "#0074D9";    
+                }}
+            if (inputValue == 2008) {
+               if (data.properties.elect2008 == "R") {
+               	  this.parentElement.appendChild(this);
+                  return "#FF4136";
+                } else if (data.properties.elect2008 == "D") {
+                  return "#0074D9";    
+                }}
+            if (inputValue == 2012) {
+               if (data.properties.elect2012 == "R") {
+               	  this.parentElement.appendChild(this);
+                  return "#FF4136";
+                } else if (data.properties.elect2012 == "D") {
+                  return "#0074D9";    
+                }}
+			if (inputValue == 2016) {
+			    if (data.properties.elect2016 == "R") {
+			        this.parentElement.appendChild(this);
+			        return "#FF4136";
+			    } else if (data.properties.elect2016 == "D") {
+			      return "#0074D9";    
+			    };
+        }}
+		
+		function initialDate(data, value){
+			 	if (data.properties.elect2000 == "R") {
+               	  this.parentElement.appendChild(this);
+                  return "#FF4136";
+                } else if (data.properties.elect2000 == "D") {
+                  return "#0074D9";    
+                }}
+	</script>	
+
+</body>
+</html>

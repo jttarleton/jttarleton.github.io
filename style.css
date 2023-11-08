@@ -115,7 +115,7 @@ body {
 
 h1 {font-family: Helvetica, sans-serif; font-size: 1em; color:#333; font-weight:normal;  padding: 20px 0px 0px 0px;}
 h2 {font-family: 'Ostrich Sans', sans-serif; font-size: 45px; color:#000000; line-height:26px; font-weight:normal; padding: 28px 0px 0px 0px; text-align:center;}
-h3 {font-family: 'Ostrich Sans', sans-serif; font-size: 30px; color:#666; line-height: 15px; text-indent: 0px; padding: 3px 0px 5px 0px; text-align:center;}
+h3 {font-family: 'Ostrich Sans', sans-serif; font-size: 30px; color:#666; line-height: 15px; text-indent: 0px; padding: 3px 0px 0px 0px; text-align:center;}
 h4 {font-family: 'Ostrich Sans', sans-serif; font-size: 25px; color:#666; line-height: 15px; text-indent: 0px; padding: 7px 0px 0px 0px; text-align:center;}
 h5 {font-size: 9pt; color:#000000;}
 
@@ -123,7 +123,7 @@ img{border:none;}
 img a{border:none;}
 blockquote{border-left:1px solid #A5ABAB; margin:0px; padding:0 12px 0 12px;}
 
-p{line-height: 30px; margin:32px auto; text-indent: 0px;}
+p{line-height: 30px; margin:32px auto; margin-top: 10px; text-indent: 0px;}
 
 a {text-decoration: none;}
 a:link {color: #333; text-decoration: none;}
@@ -137,11 +137,10 @@ ol{padding: .5em 0em 0em 3.2em;}
 li{line-height: 30px; padding: 6px 0 0 0;}
 
 
-#content {text-align:center; text-align:justify; text-align-last:center; max-width: 32em; overflow: hidden;
-	margin-top:28px; margin: 0 auto; margin-bottom:0px;}
-.entry a:link {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
-.entry a:visited {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
-.entry a:hover {color: #2E8B57; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #C0C0C0; text-decoration: none;}
+#content {text-align:center; text-align:justify; text-align-last:center; min-width: 20em; max-width: 32em; overflow: hidden; margin: 0 auto;}
+#content a:link {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
+#content a:visited {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
+#content a:hover {color: #2E8B57; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #C0C0C0; text-decoration: none;}
 
 
 #footer {min-width: 20em; max-width: 32em; overflow: hidden; margin:auto; margin-bottom:28px;}

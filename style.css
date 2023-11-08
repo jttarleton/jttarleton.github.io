@@ -103,6 +103,10 @@ This theme is uncopyrighted, free, and offered as is.
 	font-style: italic;
 }
 
+strong {
+  font-weight: 900;
+}
+
 
 body {
 	background: rgb(243,240,238);
@@ -110,12 +114,12 @@ body {
 	font: 21px 'crimson', bodyfont, serif;
 	color: #000000;
   line-height: 30px;
-
+	min-width:20em
 	}
 
 h1 {font-family: Helvetica, sans-serif; font-size: 1em; color:#333; font-weight:normal;  padding: 20px 0px 0px 0px;}
 h2 {font-family: 'Ostrich Sans', sans-serif; font-size: 45px; color:#000000; line-height:26px; font-weight:normal; padding: 28px 0px 0px 0px; text-align:center;}
-h3 {font-family: 'Ostrich Sans', sans-serif; font-size: 30px; color:#666; line-height: 15px; text-indent: 0px; padding: 3px 0px 0px 0px; text-align:center;}
+h3 {font-family: 'Ostrich Sans', sans-serif; font-size: 30px; color:#666; line-height: 15px; text-indent: 0px; padding: 3px 0px 0px 0px; -webkit-font-smoothing: subpixel-antialiased; text-align:center;}
 h4 {font-family: 'Ostrich Sans', sans-serif; font-size: 25px; color:#666; line-height: 15px; text-indent: 0px; padding: 7px 0px 0px 0px; text-align:center;}
 h5 {font-size: 9pt; color:#000000;}
 
@@ -135,6 +139,7 @@ li{line-height: 30px; padding: 6px 0 0 0;}
 
 ol{padding: .5em 0em 0em 3.2em;}
 li{line-height: 30px; padding: 6px 0 0 0;}
+
 
 
 #content {text-align:justify; text-align-last:center; min-width: 20em; max-width: 32em; overflow: hidden; margin:auto}

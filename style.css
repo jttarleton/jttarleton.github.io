@@ -123,7 +123,7 @@ img{border:none;}
 img a{border:none;}
 blockquote{border-left:1px solid #A5ABAB; margin:0px; padding:0 12px 0 12px;}
 
-p{line-height: 30px; margin:32px auto; margin-top: 10px; text-indent: 0px; text-align:center; text-align:justify; text-align-last:center;}
+p{line-height: 30px; margin:auto; margin-top: 10px; margin-bottom: 33px; text-indent: 0px; text-align:center; text-align:justify; text-align-last:center;}
 
 a {text-decoration: none;}
 a:link {color: #303030; text-decoration: none;}

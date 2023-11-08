@@ -138,7 +138,7 @@ li{line-height: 30px; padding: 6px 0 0 0;}
 
 
 #content {min-width: 20em; max-width: 32em; overflow: hidden;
-	margin-top:28px; margin:auto; margin-bottom:0px; text-align:center; text-align:justify; text-align-last:center}
+	margin-top:28px; margin:auto; margin-bottom:0px; text-align:center; text-align:justify; text-align-last:center;}
 .entry a:link {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
 .entry a:visited {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
 .entry a:hover {color: #2E8B57; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #C0C0C0; text-decoration: none;}

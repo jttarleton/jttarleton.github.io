@@ -140,8 +140,6 @@ li{line-height: 30px; padding: 6px 0 0 0;}
 ol{padding: .5em 0em 0em 3.2em;}
 li{line-height: 30px; padding: 6px 0 0 0;}
 
-
-
 #content {/*text-align:justify; text-align-last:center;*/ text-align: center; text-align: -webkit-center; text-align:-moz-center; min-width: 20em; max-width: 32em; overflow: hidden; margin:0 auto}
 #content a:link {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
 #content a:visited {color: #303030; text-decoration: none; border-width: 0 0 1px 0; border-style: none none solid none; border-color: #2E8B57;}
